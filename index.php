@@ -103,11 +103,11 @@ $topic = mysql_fetch_assoc($result);
                     <?php
                     $sql="select id,title from topic";
                     $result=mysql_query($sql);
-                    while($row=mysql_fetch_assoc($result)) {
+                    //while($row=mysql_fetch_assoc($result)) {
                     echo "
                     <li>
-                        <a href=\"?id={$row['id']}\">{$row['title']}</a></li>";
-                        }
+                        <a href=\"?id=4\">JSON</a></li>";
+                        //}
                         ?>
                 </ul>
             </nav>
