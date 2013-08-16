@@ -13,11 +13,6 @@ if(!empty($_GET['id'])) {
 $sql="SELECT * FROM topic WHERE id = ".$_GET['id'];
 $result = mysql_query($sql);
 $topic = mysql_fetch_assoc($result);
-}else{
-$sql="SELECT * FROM topic WHERE id = 1";
-$result = mysql_query($sql);
-$topic = mysql_fetch_assoc($result);
-	
 }
 ?>
 <!DOCTYPE html>
@@ -103,11 +98,11 @@ $topic = mysql_fetch_assoc($result);
                     <?php
                     $sql="select id,title from topic";
                     $result=mysql_query($sql);
-                    //while($row=mysql_fetch_assoc($result)) {
+                    while($row=mysql_fetch_assoc($result)) {
                     echo "
                     <li>
-                        <a href=\"?id=4\">JSON</a></li>";
-                        //}
+                        <a href=\"?id={$row['id']}\">{$row['title']}</a></li>";
+                        }
                         ?>
                 </ul>
             </nav>
